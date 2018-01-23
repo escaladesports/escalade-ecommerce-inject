@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch'
 
-export default async function (ids) {
+export default async function () {
 	const ids = Object.keys(this.productData)
 
 	try{
