@@ -11,12 +11,27 @@ class Ecomm{
 			environment: 'production',
 			...options,
 		}
-		this.log('Escalade ecommerce init...')
 
-		// Check for site ID
+		this.log('Escalade ecommerce init...')
 		if(!options.siteId){
 			return this.log('No siteId found.')
 		}
+
+		const handler = {
+			get: (target, key) => {
+				return target[key]
+			},
+			set: (target, key, value) => {
+				target[key] = value
+				return true
+			},
+		}
+
+		this.productData = {
+			stock: new Proxy({}, handler),
+			pricing: new Proxy({}, handler),
+		}
+
 
 		// Set default APIs
 		if(!options.stockApi){
@@ -24,7 +39,6 @@ class Ecomm{
 		}
 
 		// Get product data and IDs
-		this.productData = {}
 		this.loadCache()
 		this.findIds()
 

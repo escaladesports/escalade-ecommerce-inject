@@ -22,9 +22,7 @@
 	"serve": "cd dist-dev && static-server --open",
 	"test": "BABEL_ENV=es5 mocha --require babel-core/register"
   },
-  "pre-commit": [
-    "test"
-  ],
+  "pre-commit": [],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
