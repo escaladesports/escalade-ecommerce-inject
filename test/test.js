@@ -1,10 +1,11 @@
 import { expect } from 'chai'
-import theModule from '../src'
+import Ecomm from '../src'
 
-describe('Default module', () => {
-	it('Should have content', () => {
-		const testVar = theModule()
-		expect(testVar).to.not.be.empty
-		expect(testVar.test).to.equal('123')
+describe('Ecomm module', () => {
+	it('Should return class', () => {
+		const ecomm = new Ecomm({
+			siteId: 'goalrilla',
+		})
+		expect(ecomm).to.not.be.empty
 	})
 })
