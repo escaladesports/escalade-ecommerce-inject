@@ -8,7 +8,9 @@ function newElementObj(){
 }
 
 export default function () {
-	this.elements = {}
+	if (!this.elements) {
+		this.elements = {}
+	}
 	for(let camel in attrs){
 		let attr = attrs[camel]
 		let els = document.querySelectorAll(`[${attr}]`)
@@ -18,7 +20,10 @@ export default function () {
 			if(!(id in this.elements)){
 				this.elements[id] = newElementObj()
 			}
-			this.elements[id][camel].push(el)
+			if (this.elements[id][camel].indexOf(el) === -1) {
+				this.elements[id][camel].push(el)
+			}
+			this.initProductData(id)
 		}
 	}
 }

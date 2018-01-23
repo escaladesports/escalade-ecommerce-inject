@@ -3,7 +3,8 @@ import apis from './apis'
 import getStock from './get-stock'
 import getPricing from './get-pricing'
 import loadCache from './load-cache'
-import findIds from './find-ids'
+import getElements from './get-elements'
+import initProductData from './init-product-data'
 
 class Ecomm{
 	constructor(options = {}){
@@ -40,7 +41,12 @@ class Ecomm{
 
 		// Get product data and IDs
 		this.loadCache()
-		this.findIds()
+		this.getElements()
+		if(options.productIds){
+			options.productIds.forEach(id => {
+				this.initProductData(id)
+			})
+		}
 
 		// TODO: Update elements
 
@@ -55,6 +61,7 @@ Ecomm.prototype = {
 	getStock,
 	getPricing,
 	loadCache,
+	initProductData,
 }
 
 export default Ecomm
