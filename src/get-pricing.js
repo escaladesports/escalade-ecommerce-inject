@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
 export default async function() {
-	const ids = Object.keys(this.productData)
+	const ids = Object.keys(this.productData.pricing)
 
 	try{
 		let data = await fetch(this.options.pricingApi, {
@@ -11,9 +11,10 @@ export default async function() {
 				ids: ids
 			})
 		})
-		data = data.json()
-		for (let i in this.data) {
-			this.productData[i.toUpperCase()].pricing = this.data[i]
+		data = await data.json()
+		console.log('PRICING:', JSON.stringify(data, null, 3))
+		for (let i in data) {
+			this.productData.pricing[i.toUpperCase()] = data[i]
 		}
 		return data
 	}

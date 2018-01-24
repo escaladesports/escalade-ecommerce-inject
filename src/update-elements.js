@@ -28,13 +28,17 @@ export default function (id) {
 			}
 		}
 
+		console.log('LOADING:', loading)
+		console.log('AVAILABLE:', available)
+		console.log('')
+
 		setStyles(els.isLoading, loading)
-		setStyles(els.isAvailable, available)
-		setStyles(els.isNotAvailable, !available)
 		els.price.forEach(el => {
 			// TODO: format number
 			el.textContent = pricing
 		})
+		setStyles(els.isAvailable, available)
+		setStyles(els.isNotAvailable, !available)
 
 	}
 }
