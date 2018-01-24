@@ -11,7 +11,6 @@ export default function (id) {
 		let els = this.elements[id]
 		let stock = this.productData.stock[id]
 		let pricing = this.productData.pricing[id]
-		let formattedPricing = `$${price.toFixed(2)}`
 		let available
 		let loading
 
@@ -33,7 +32,8 @@ export default function (id) {
 		setStyles(els.isAvailable, available)
 		setStyles(els.isNotAvailable, !available)
 		els.price.forEach(el => {
-			el.textContent = formattedPricing
+			// TODO: format number
+			el.textContent = pricing
 		})
 
 	}

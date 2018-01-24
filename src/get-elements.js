@@ -5,6 +5,7 @@ function newElementObj(){
 	for(let i in attrs){
 		obj[i] = []
 	}
+	return obj
 }
 
 export default function () {
