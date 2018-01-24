@@ -5,6 +5,7 @@ import getPricing from './get-pricing'
 import loadCache from './load-cache'
 import getElements from './get-elements'
 import initProductData from './init-product-data'
+import updateElements from './update-elements'
 
 class Ecomm{
 	constructor(options = {}){
@@ -24,6 +25,7 @@ class Ecomm{
 			},
 			set: (target, key, value) => {
 				target[key] = value
+				this.updateElements(key)
 				return true
 			},
 		}
@@ -62,6 +64,7 @@ Ecomm.prototype = {
 	getPricing,
 	loadCache,
 	initProductData,
+	updateElements,
 }
 
 export default Ecomm
