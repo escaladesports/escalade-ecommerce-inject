@@ -1,5 +1,5 @@
 import Ecomm from '../src/index'
-const ecomm = new Ecomm({
+
+window.escaEcomm = new Ecomm({
 	siteId: 'goalrilla',
-	poll: .1,
 })

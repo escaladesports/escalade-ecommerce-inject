@@ -17,7 +17,12 @@ export default function () {
 		let els = document.querySelectorAll(`[${attr}]`)
 		for(let i = els.length; i--;){
 			let el = els[i]
-			let id = el.getAttribute(attr).toUpperCase()
+			let id = el.getAttribute(attr)
+			if(!id){
+				let altId = el.getAttribute('data-id')
+				if(altId) id = altId
+			}
+			id = id.toUpperCase()
 			if(!(id in this.elements)){
 				this.elements[id] = newElementObj()
 			}

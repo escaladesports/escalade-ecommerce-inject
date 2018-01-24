@@ -49,6 +49,14 @@ class Ecomm{
 			}
 		}
 
+		// Set Zygote props
+		if('zygote' in window){
+			window.zygote.properties = {
+				site: this.options.siteId
+			}
+			window.zygote.api = this.options.zygoteApi
+		}
+
 		// Get product data and IDs
 		if (this.options.cache) {
 			this.loadCache()

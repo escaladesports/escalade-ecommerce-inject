@@ -33,6 +33,10 @@ export default function (id) {
 			// TODO: format number
 			el.textContent = pricing
 		})
+		console.log('PRICING:', pricing)
+		els.addToCart.forEach(el => {
+			el.setAttribute('data-price', pricing)
+		})
 		setStyles(els.isAvailable, available)
 		setStyles(els.isNotAvailable, !available)
 
