@@ -1,18 +1,19 @@
-import log from './log'
+ import log from './log'
 import apis from './apis'
-import getStock from './get-stock'
-import getPricing from './get-pricing'
 import loadCache from './load-cache'
 import getElements from './get-elements'
 import initProductData from './init-product-data'
 import updateElements from './update-elements'
 import saveCache from './save-cache'
+import fetch from './fetch'
+import fetchAll from './fetch-all'
 
 class Ecomm{
 	constructor(options = {}){
 		this.options = {
 			environment: 'production',
-			cache: 1,
+			cache: 1, // Days
+			poll: 10, // Minutes
 			...options,
 		}
 
@@ -60,20 +61,26 @@ class Ecomm{
 		}
 
 		// Update product data
-		this.getStock()
-		this.getPricing()
+		this.fetchAll()
+
+		// Set polling interval
+		if(this.options.poll){
+			setInterval(() => {
+				this.fetchAll()
+			}, this.options.poll * 60 * 1000)
+		}
 	}
 }
 
 Ecomm.prototype = {
 	log,
-	getStock,
-	getPricing,
 	loadCache,
 	initProductData,
 	updateElements,
 	getElements,
 	saveCache,
+	fetch,
+	fetchAll,
 }
 
 export default Ecomm

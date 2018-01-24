@@ -1,10 +1,10 @@
 import fetch from 'isomorphic-fetch'
 
-export default async function() {
-	const ids = Object.keys(this.productData.pricing)
+export default async function (type) {
+	const ids = Object.keys(this.productData[type])
 
 	try{
-		let data = await fetch(this.options.pricingApi, {
+		let data = await fetch(this.options[`${type}Api`], {
 			method: 'POST',
 			body: JSON.stringify({
 				site: this.options.siteId,
@@ -12,8 +12,8 @@ export default async function() {
 			})
 		})
 		data = await data.json()
-		for (let i in data) {
-			this.productData.pricing[i.toUpperCase()] = data[i]
+		for(let i in data){
+			this.productData[type][i.toUpperCase()] = data[i]
 		}
 		return data
 	}
