@@ -6,11 +6,13 @@ import loadCache from './load-cache'
 import getElements from './get-elements'
 import initProductData from './init-product-data'
 import updateElements from './update-elements'
+import saveCache from './save-cache'
 
 class Ecomm{
 	constructor(options = {}){
 		this.options = {
 			environment: 'production',
+			cache: 1,
 			...options,
 		}
 
@@ -24,8 +26,11 @@ class Ecomm{
 				return target[key]
 			},
 			set: (target, key, value) => {
-				target[key] = value
-				this.updateElements(key)
+				if (target[key] !== value) {
+					target[key] = value
+					this.updateElements(key)
+					this.saveCache()
+				}
 				return true
 			},
 		}
@@ -44,7 +49,9 @@ class Ecomm{
 		}
 
 		// Get product data and IDs
-		this.loadCache()
+		if (this.options.cache) {
+			this.loadCache()
+		}
 		this.getElements()
 		if (this.options.productIds){
 			this.options.productIds.forEach(id => {
@@ -66,6 +73,7 @@ Ecomm.prototype = {
 	initProductData,
 	updateElements,
 	getElements,
+	saveCache,
 }
 
 export default Ecomm
