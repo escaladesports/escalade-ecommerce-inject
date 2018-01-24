@@ -1,5 +1,5 @@
-import Ecomm from '../src/index'
+import EscaEcomm from '../src/index'
 
-window.escaEcomm = new Ecomm({
+window.escaEcomm = new EscaEcomm({
 	siteId: 'goalrilla',
 })

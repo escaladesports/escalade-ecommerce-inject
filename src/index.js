@@ -1,4 +1,4 @@
- import log from './log'
+import log from './log'
 import apis from './apis'
 import loadCache from './load-cache'
 import getElements from './get-elements'

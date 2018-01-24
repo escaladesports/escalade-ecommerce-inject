@@ -31,11 +31,11 @@ if(process.env.NODE_ENV === 'production'){
 		new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') } }),
 	)
 	entry = [
-		'./src/index.js'
+		'./src/expose.js'
 	]
 	output = {
 		path: path.join(__dirname, 'dist'),
-		filename: 'index.js',
+		filename: 'v1.js',
 		publicPath: '/src/'
 	}
 }
