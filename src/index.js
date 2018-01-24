@@ -15,7 +15,7 @@ class Ecomm{
 		}
 
 		this.log('Escalade ecommerce init...')
-		if(!options.siteId){
+		if(!this.options.siteId){
 			return this.log('No siteId found.')
 		}
 
@@ -37,15 +37,18 @@ class Ecomm{
 
 
 		// Set default APIs
-		if(!options.stockApi){
-			options.stockApi = apis.stock[options.environment]
+		for(let i in apis){
+			let key = `${i}Api`
+			if(!this.options[key]){
+				this.options[key] = apis[i][this.options.environment]
+			}
 		}
 
 		// Get product data and IDs
 		this.loadCache()
 		this.getElements()
-		if(options.productIds){
-			options.productIds.forEach(id => {
+		if (this.options.productIds){
+			this.options.productIds.forEach(id => {
 				this.initProductData(id)
 			})
 		}
@@ -65,6 +68,7 @@ Ecomm.prototype = {
 	loadCache,
 	initProductData,
 	updateElements,
+	getElements,
 }
 
 export default Ecomm

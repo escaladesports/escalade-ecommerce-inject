@@ -1,3 +1,4 @@
-import Boilerplate from '../src/index'
-const obj = Boilerplate()
-console.log(obj)
+import Ecomm from '../src/index'
+const ecomm = new Ecomm({
+	siteId: 'goalrilla'
+})
