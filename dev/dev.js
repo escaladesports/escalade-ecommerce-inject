@@ -1,3 +1,5 @@
-import Boilerplate from '../src/index'
-const obj = Boilerplate()
-console.log(obj)
+import EscaEcomm from '../src/index'
+
+window.escaEcomm = new EscaEcomm({
+	siteId: 'goalrilla',
+})

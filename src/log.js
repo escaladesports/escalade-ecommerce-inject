@@ -1,5 +1,5 @@
-export default function(res) {
+export default function() {
 	if (!this.options.silent) {
-		console.log(res)
+		console.log(...arguments)
 	}
 }

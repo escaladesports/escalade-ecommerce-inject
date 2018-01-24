@@ -13,6 +13,9 @@ else if (process.env.NODE_ENV !== 'production'){
 	plugins.push(new webpack.HotModuleReplacementPlugin())
 }
 
+let entry
+let output
+
 if(process.env.NODE_ENV === 'production'){
 	console.log('PRODUCTION')
 	plugins.push(
@@ -27,19 +30,30 @@ if(process.env.NODE_ENV === 'production'){
 		}),
 		new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') } }),
 	)
-
+	entry = [
+		'./src/expose.js'
+	]
+	output = {
+		path: path.join(__dirname, 'dist'),
+		filename: 'v1.js',
+		publicPath: '/src/'
+	}
+}
+else{
+	entry = [
+		'./dev/dev.js'
+	]
+	output = {
+		path: path.join(__dirname, 'dist'),
+		filename: 'dev.js',
+		publicPath: '/dev/'
+	}
 }
 
 module.exports = {
 	devtool: 'eval',
-	entry: [
-		'./dev/dev.js'
-	],
-	output: {
-		path: path.join(__dirname, 'dist'),
-		filename: 'index.js',
-		publicPath: '/dev/'
-	},
+	entry: entry,
+	output: output,
 	plugins: plugins,
 	resolve: {
 		extensions: ['.js', '.jsx']
