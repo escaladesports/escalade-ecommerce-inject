@@ -1,22 +1,73 @@
-# JavaScript Module Boilerplate
+# escalade-ecommerce-inject
 
-A simple JavaScript boilerplate that outputs to ES5 and ES6.
+Client side JavaScript utilities to add Escalade's ecomm system to any website.
 
 ## Getting started
 
-```bash
-git clone git@github.com:escaladesports/javascript-module-boilerplate.git --depth=1 your-module
-cd your-module
-rm -rf .git
+Insert the JavaScript file before your closing `</body>` tag:
+
+```html
+<script src="https://deligation--zygote.netlify.com/zygote-v1.js"></script>
+<script src="https://escalade-ecommerce-inject.netlify.com/v1.js"></script>
+<script>
+	new EscaEcomm({
+		siteId: 'your-site-id'
+	})
+</script>
 ```
 
-Also make sure to edit the `package.json` file with a new name, version number, author, and anything else you might need.
+Optionally, add the CSS file before your closing `</head>` tag for the basic styles:
+
+```html
+<link type="text/css" rel="stylesheet" href="https://deligation--zygote.netlify.com/zygote-v1.css">
+```
 
 ## Usage
 
-- `yarn test`: Run mocha tests
-- `yarn analyze`: View bundle sizes
+### "Add to Cart" Buttons
 
-# Unit Testing
+```html
+<button
+	data-esca-add-to-cart
+	data-id="as701r10"
+	data-name="React One Pro"
+	data-price="259.99"
+	data-img="/img/product/thumbnail.jpg"
+	data-url="/product/as701r10"
+	data-desc="This is the product description."
+	data-open-cart
+	>
+	Add to Cart
+</button>
+```
 
-Unit tests will be performed pre-commit and pre-publish. You can change this in the npm scripts if this doesn't work well with your use case.
+### Loading Animations/Elements
+
+To show an element only when stock & price is being fetched, add the `data-esca-is-loading` attribute along with the product ID.
+
+```html
+<div data-esca-is-loading="ID123" style="display:none">Loading...</div>
+```
+
+### Show When Available
+
+To show an element only if the product is in stock, add the `data-esca-is-available` attribute along with the product ID.
+
+Wrap this around the add to cart button to make sure it only shows if the product is in stock.
+
+```html
+<div data-esca-is-available="ID123" style="display:none">
+	<button
+		data-esca-add-to-cart
+		data-id="as701r10"
+		data-name="React One Pro"
+		data-price="259.99"
+		data-img="/img/product/thumbnail.jpg"
+		data-url="/product/as701r10"
+		data-desc="This is the product description."
+		data-open-cart
+		>
+		Add to Cart
+	</button>
+</div>
+```

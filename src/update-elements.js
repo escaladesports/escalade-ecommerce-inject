@@ -6,6 +6,24 @@ function setStyles(els, display){
 	})
 }
 
+function formatNumber(num) {
+	let array = num
+	if(typeof array === 'string'){
+		array = Number(array)
+	}
+	if(typeof array === 'number'){
+		array = array.toFixed(2)
+	}
+	array = array.split('')
+	let index = -3
+	while (array.length + index > 0) {
+		array.splice(index, 0, ',')
+		// Decrement by 4 since we just added another unit to the array.
+		index -= 4
+	}
+	return array.join('')
+}
+
 export default function (id) {
 	if(this.elements[id]){
 		let els = this.elements[id]
@@ -31,9 +49,13 @@ export default function (id) {
 		setStyles(els.isLoading, loading)
 		els.price.forEach(el => {
 			// TODO: format number
-			el.textContent = pricing
+			let formatted = pricing
+			if(typeof formatted === 'string'){
+				formatted = Number(formatted)
+			}
+			formatted = '$' + formatted.toFixed(2)
+			el.textContent = formatted
 		})
-		console.log('PRICING:', pricing)
 		els.addToCart.forEach(el => {
 			el.setAttribute('data-price', pricing)
 		})

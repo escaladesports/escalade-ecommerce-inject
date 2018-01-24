@@ -8,4 +8,7 @@ export default function() {
 			this.productData[i] = data[i]
 		}
 	}
+	else{
+		this.log('No product data cache found')
+	}
 }

@@ -12,6 +12,7 @@ export default async function (type) {
 			})
 		})
 		data = await data.json()
+		this.log(`Fetched data for ${type}:`, data)
 		for(let i in data){
 			this.productData[type][i.toUpperCase()] = data[i]
 		}
