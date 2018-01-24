@@ -12,7 +12,6 @@ export default async function() {
 			})
 		})
 		data = await data.json()
-		console.log('PRICING:', JSON.stringify(data, null, 3))
 		for (let i in data) {
 			this.productData.pricing[i.toUpperCase()] = data[i]
 		}

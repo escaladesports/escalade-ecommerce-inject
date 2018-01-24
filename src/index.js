@@ -35,7 +35,6 @@ class Ecomm{
 			pricing: new Proxy({}, handler),
 		}
 
-
 		// Set default APIs
 		for(let i in apis){
 			let key = `${i}Api`
@@ -52,8 +51,6 @@ class Ecomm{
 				this.initProductData(id)
 			})
 		}
-
-		// TODO: Update elements
 
 		// Update product data
 		this.getStock()

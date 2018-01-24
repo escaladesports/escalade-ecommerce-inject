@@ -28,10 +28,6 @@ export default function (id) {
 			}
 		}
 
-		console.log('LOADING:', loading)
-		console.log('AVAILABLE:', available)
-		console.log('')
-
 		setStyles(els.isLoading, loading)
 		els.price.forEach(el => {
 			// TODO: format number

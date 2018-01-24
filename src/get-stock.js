@@ -12,7 +12,6 @@ export default async function () {
 			})
 		})
 		data = await data.json()
-		console.log('STOCK:', JSON.stringify(data, null, 3))
 		for(let i in data){
 			this.productData.stock[i.toUpperCase()] = data[i]
 		}
