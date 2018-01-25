@@ -16,11 +16,10 @@ export default async function (type) {
 		for(let i in data){
 			this.productData[type][i.toUpperCase()] = data[i]
 		}
-		return data
 	}
 	catch(err){
 		console.error(err)
 	}
 
-	return false
+	return this
 }

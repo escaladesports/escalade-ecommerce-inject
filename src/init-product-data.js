@@ -5,4 +5,5 @@ export default function(id){
 	if (!(id in this.productData.pricing)) {
 		this.productData.pricing[id] = 'unknown'
 	}
+	return this
 }

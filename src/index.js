@@ -77,6 +77,8 @@ class Ecomm{
 				this.fetchAll()
 			}, this.options.poll * 60 * 1000)
 		}
+
+		return this
 	}
 }
 

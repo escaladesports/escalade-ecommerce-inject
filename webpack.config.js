@@ -17,7 +17,6 @@ let entry
 let output
 
 if(process.env.NODE_ENV === 'production'){
-	console.log('PRODUCTION')
 	plugins.push(
 		new webpack.optimize.ModuleConcatenationPlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin(),

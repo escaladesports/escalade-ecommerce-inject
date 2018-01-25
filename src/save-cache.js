@@ -9,4 +9,5 @@ export default function() {
 			expires: this.options.cache
 		}
 	)
+	return this
 }
