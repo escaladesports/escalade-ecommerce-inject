@@ -134,3 +134,17 @@ Wrap your out of stock message in this tag to only show the message when the pro
 	</body>
 </html>
 ```
+
+## Dynamically Generated Elements
+
+For websites that generate ecommerce elements on the fly (such as React or Angular), you can initiate new elements by calling the `getElements` property. If you need to immediately update the the new elements, just call `updateElements`.
+
+```javascript
+var escaEcomm = new EscaEcomm({
+	siteId: 'goalrilla'
+})
+
+// Then after new elements have been rendered in the DOM...
+escaEcomm.getElements()
+	.updateElements()
+```

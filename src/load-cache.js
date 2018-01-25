@@ -11,4 +11,5 @@ export default function() {
 	else{
 		this.log('No product data cache found')
 	}
+	return this
 }

@@ -61,6 +61,6 @@ export default function (id) {
 		})
 		setStyles(els.isAvailable, available)
 		setStyles(els.isNotAvailable, !available)
-
 	}
+	return this
 }
