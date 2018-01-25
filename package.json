@@ -1,6 +1,6 @@
 {
   "name": "escalade-ecommerce-inject",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist-es5/index.js",
   "browser": "dist-es5/index.js",
   "module": "dist-es6/index.js",
