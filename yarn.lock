@@ -2464,9 +2464,9 @@ es6-weak-map@^2.0.1:
     es6-iterator "^2.0.1"
     es6-symbol "^3.1.1"
 
-esca-scripts@^0.9.5:
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/esca-scripts/-/esca-scripts-0.9.5.tgz#e0215e692d0c862f8a033eddf984e93ac8c24a66"
+esca-scripts@^0.9.6:
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/esca-scripts/-/esca-scripts-0.9.6.tgz#d5e29db6d192bc85e8ddbc490d3637f236c10243"
   dependencies:
     babel-cli "^6.26.0"
     babel-core "^6.26.0"
@@ -4069,7 +4069,7 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
-"mime-db@>= 1.30.0 < 2", mime-db@^1.32.0:
+"mime-db@>= 1.30.0 < 2":
   version "1.32.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.32.0.tgz#485b3848b01a3cda5f968b4882c0771e58e09414"
 
@@ -6096,7 +6096,7 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-static-server@escaladesports/static-server:
+static-server@escaladesports/static-server, "static-server@github:escaladesports/static-server":
   version "3.0.0"
   resolved "https://codeload.github.com/escaladesports/static-server/tar.gz/0ef140cc5af48cba5249575df2bce1a6ca702f6f"
   dependencies:
