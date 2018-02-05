@@ -13,8 +13,8 @@
     "analyze": "esca-scripts analyze --input './src/inject.js' --browser",
     "build": "run-p build:main build:browser",
     "build:main": "esca-scripts build --input './src/index.js' --output './dist/index.js' --component --minify false",
-    "build:browser": "esca-scripts build --input './src/index.js' --output './dist-browser/v1.js' --component --name EscaEcomm --minify false",
-    "dev": "esca-scripts dev ---input './dev/dev.js, ./dev/index.html' --browser --react",
+    "build:browser": "esca-scripts build --input './src/index.js' --output './dist-browser/v1.js' --component --browser --name EscaEcomm --minify false",
+    "dev": "esca-scripts dev ---input './dev/dev.js, ./dev/index.html' --browser",
     "prepublishOnly": "npm run build"
   },
   "pre-commit": [],
