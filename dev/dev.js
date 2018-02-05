@@ -1,5 +1,5 @@
-import EscaEcomm from '../dist-browser/v1'
-window.EscaEcomm = EscaEcomm
+//import EscaEcomm from '../dist-browser/v1'
+//window.EscaEcomm = EscaEcomm
 
 setTimeout(() => {
 	console.log('Running')
