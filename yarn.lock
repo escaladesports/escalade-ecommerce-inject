@@ -542,6 +542,10 @@ babel-minify-webpack-plugin@^0.2.0:
     babel-preset-minify "^0.2.0"
     webpack-sources "^1.0.1"
 
+babel-plugin-add-module-exports@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-add-module-exports/-/babel-plugin-add-module-exports-0.2.1.tgz#9ae9a1f4a8dc67f0cdec4f4aeda1e43a5ff65e25"
+
 babel-plugin-check-es2015-constants@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-check-es2015-constants/-/babel-plugin-check-es2015-constants-6.22.0.tgz#35157b101426fd2ffd3da3f75c7d1e91835bbf8a"
@@ -2468,13 +2472,14 @@ es6-weak-map@^2.0.1:
     es6-iterator "^2.0.1"
     es6-symbol "^3.1.1"
 
-esca-scripts@^0.9.7:
-  version "0.9.7"
-  resolved "https://registry.yarnpkg.com/esca-scripts/-/esca-scripts-0.9.7.tgz#386c4ecad3047fd9a26f4c33a4b358a8d65237d1"
+esca-scripts@^0.9.9:
+  version "0.9.9"
+  resolved "https://registry.yarnpkg.com/esca-scripts/-/esca-scripts-0.9.9.tgz#24fb9a51b40cfabb563dee6065c9ad09e91d0634"
   dependencies:
     babel-cli "^6.26.0"
     babel-core "^6.26.0"
     babel-loader "^7.1.2"
+    babel-plugin-add-module-exports "^0.2.1"
     babel-plugin-external-helpers "^6.22.0"
     babel-plugin-syntax-dynamic-import "^6.18.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.12"

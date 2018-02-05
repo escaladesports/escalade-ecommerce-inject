@@ -4,6 +4,7 @@
 setTimeout(() => {
 	console.log('Running')
 	if (window.EscaEcomm) {
+		console.log(window.EscaEcomm)
 		window.escaEcomm = new window.EscaEcomm({
 			siteId: 'goalrilla',
 		})
