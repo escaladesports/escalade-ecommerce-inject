@@ -1054,6 +1054,10 @@ babel-preset-stage-3@^6.24.1:
     babel-plugin-transform-exponentiation-operator "^6.24.1"
     babel-plugin-transform-object-rest-spread "^6.22.0"
 
+babel-regenerator-runtime@^6.5.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/babel-regenerator-runtime/-/babel-regenerator-runtime-6.5.0.tgz#0e41cd1c9f80442466f015c749fff8ba98f8e110"
+
 babel-register@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-register/-/babel-register-6.26.0.tgz#6ed021173e2fcb486d7acb45c6009a856f647071"
@@ -2464,9 +2468,9 @@ es6-weak-map@^2.0.1:
     es6-iterator "^2.0.1"
     es6-symbol "^3.1.1"
 
-esca-scripts@^0.9.6:
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/esca-scripts/-/esca-scripts-0.9.6.tgz#d5e29db6d192bc85e8ddbc490d3637f236c10243"
+esca-scripts@^0.9.7:
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/esca-scripts/-/esca-scripts-0.9.7.tgz#386c4ecad3047fd9a26f4c33a4b358a8d65237d1"
   dependencies:
     babel-cli "^6.26.0"
     babel-core "^6.26.0"
@@ -2475,10 +2479,12 @@ esca-scripts@^0.9.6:
     babel-plugin-syntax-dynamic-import "^6.18.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.12"
     babel-plugin-transform-runtime "^6.23.0"
+    babel-polyfill "^6.26.0"
     babel-preset-es2015 "^6.24.1"
     babel-preset-es2016 "^6.24.1"
     babel-preset-react "^6.24.1"
     babel-preset-stage-3 "^6.24.1"
+    babel-regenerator-runtime "^6.5.0"
     chai "^4.1.2"
     child-process-promise "^2.2.1"
     commander "^2.13.0"
