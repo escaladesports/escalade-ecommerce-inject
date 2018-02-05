@@ -1,10 +1,8 @@
 {
   "name": "escalade-ecommerce-inject",
   "version": "0.1.0",
-  "main": "dist-es5/index.js",
-  "browser": "dist-es5/index.js",
-  "module": "dist-es6/index.js",
-  "jsnext:main": "dist-es6/index.js",
+  "main": "dist/index.js",
+  "browser": "dist-browser/v1.js",
   "author": "Kennedy Rose <krose@escaladesports.com>",
   "repository": {
     "type": "git",
@@ -12,16 +10,12 @@
   },
   "license": "MIT",
   "scripts": {
-    "analyze": "cross-env ANALYZE=1 webpack -p",
-    "build": "run-p build:bundle",
-    "build:dev": "webpack -p && cp dev/index.html dist/index.html",
-    "build:es6": "cross-env BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
-    "build:es5": "babel ./src --out-dir ./dist-es5",
-    "build:bundle": "cross-env NODE_ENV=production webpack -p",
-    "dev": "webpack-dev-server --hot --open --open-page \"/dev\"",
-    "prepublishOnly": "npm run test && npm run build",
-    "serve": "cd dist-dev && static-server --open",
-    "test": "BABEL_ENV=es5 mocha --require babel-core/register"
+    "analyze": "esca-scripts analyze --input './src/inject.js' --react --browser",
+    "build": "run-p build:main build:browser",
+    "build:main": "esca-scripts build --input './src/index.js' --output './dist/index.js' --react --component --minify false",
+    "build:browser": "esca-scripts build --input './src/index.js' --output './dist-browser/v1.js' --react --browser --component --name EscaEcomm --minify false",
+    "dev": "esca-scripts dev ---input './dev/dev.js, ./dev/index.html' --browser --react",
+    "prepublishOnly": "npm run build"
   },
   "pre-commit": [],
   "devDependencies": {
@@ -35,6 +29,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "chai": "^4.1.2",
     "cross-env": "^5.1.1",
+    "esca-scripts": "^0.9.5",
     "mocha": "^4.1.0",
     "npm-run-all": "^4.1.2",
     "pre-commit": "^1.2.2",

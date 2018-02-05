@@ -19,8 +19,13 @@ docs/build/
 dist-es6/
 dist-es5/
 dist-modules/
+dist-browser/
 coverage/
 .eslintcache
+.postcssrc
+webpack.config.js
+.babelrc
+
 
 # Temporary
 temp
