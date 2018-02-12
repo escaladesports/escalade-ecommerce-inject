@@ -123,7 +123,7 @@ Wrap your out of stock message in this tag to only show the message when the pro
 
 		<div data-esca-is-not-available='b6101w' style='display:none'>Out of stock</div>
 
-
+		<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 		<script src="https://deligation--zygote.netlify.com/zygote-v1.js"></script>
 		<script src="https://escalade-ecommerce-inject.netlify.com/v1.js"></script>
 		<script>
