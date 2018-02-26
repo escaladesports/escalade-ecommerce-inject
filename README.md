@@ -135,6 +135,31 @@ Wrap your out of stock message in this tag to only show the message when the pro
 </html>
 ```
 
+## Testing
+
+For testing against Escalade's test environment, add the `environment` property when constructing the class:
+
+```javascript
+var escaEcomm = new EscaEcomm({
+	siteId: 'goalrilla',
+	environment: 'testing'
+})
+```
+
+Then use any one of these testing credit card numbers.
+
+From [authorize.net](https://developer.authorize.net/hello_world/testing_guide/): Use any expiration date after today’s date. If the card code is required, please use any 3-digit combination for Visa, Mastercard, Discover, Diners Club, EnRoute, and JCB; use a 4-digit combination for American Express.
+
+
+Test Card Brand | Number
+--- | ---
+American Express | 370000000000002
+Discover | 6011000000000012
+JCB | 3088000000000017
+Diners Club/ Carte Blanche | 38000000000006
+Visa | 4007000000027, 4012888818888, 4111111111111111
+Mastercard | 5424000000000015, 2223000010309703, 2223000010309711
+
 ## Dynamically Generated Elements
 
 For websites that generate ecommerce elements on the fly (such as React or Angular), you can initiate new elements by calling the `getElements` property. If you need to immediately update the the new elements, just call `updateElements`.
