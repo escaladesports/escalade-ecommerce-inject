@@ -15,12 +15,12 @@
     "build:main": "esca-scripts build --input './src/index.js' --output './dist/index.js' --component --minify false",
     "build:browser": "esca-scripts build --input './src/index.js' --output './dist-browser/v1.js' --component --browser --name EscaEcomm",
     "dev": "esca-scripts dev ---input './dev/dev.js, ./dev/index.html' --browser",
-    "open:github": "opn https://github.com/escaladesports/escalade-ecommerce-inject",
-    "open:netlify": "opn https://app.netlify.com/sites/escalade-ecommerce-inject/deploys",
+    "netlify": "opn https://app.netlify.com/sites/escalade-ecommerce-inject/deploys",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "esca-scripts": "^0.9.10"
+    "esca-scripts": "^0.9.10",
+    "opn-cli": "^3.1.0"
   },
   "dependencies": {
     "fetch": "^1.1.0",

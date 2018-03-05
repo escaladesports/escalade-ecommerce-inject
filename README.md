@@ -43,12 +43,14 @@ To create an active add to cart button, pass along the following data attributes
 </button>
 ```
 
+**Note:** Make sure the `data-id` attribute is all lowercase.
+
 ### Price
 
 To display pricing, add the `data-esca-price` attribute along with the product ID.
 
 ```html
-<span data-esca-price="ID123"></span>
+<span data-esca-price="id123"></span>
 ```
 
 ### Loading Animations/Elements
@@ -56,7 +58,7 @@ To display pricing, add the `data-esca-price` attribute along with the product I
 To show an element only when stock & price is being fetched, add the `data-esca-is-loading` attribute along with the product ID.
 
 ```html
-<div data-esca-is-loading="ID123" style="display:none">
+<div data-esca-is-loading="id123" style="display:none">
 	Loading...
 </div>
 ```
@@ -68,10 +70,10 @@ To show an element only if the product is in stock, add the `data-esca-is-availa
 Wrap this around the add to cart button to make sure it only shows if the product is in stock.
 
 ```html
-<div data-esca-is-available="ID123" style="display:none">
+<div data-esca-is-available="id123" style="display:none">
 	<button
 		data-esca-add-to-cart
-		data-id="ID123"
+		data-id="id123"
 		data-name="My Product"
 		data-img="/img/product/thumbnail.jpg"
 		data-url="/product/id123"
