@@ -92,7 +92,7 @@ To show an element only if the product is out of stock, add the `data-esca-is-no
 Wrap your out of stock message in this tag to only show the message when the product is out of stock.
 
 ```html
-<div data-esca-is-not-available="ID123" style="display:none">
+<div data-esca-is-not-available="id123" style="display:none">
 	Out of stock.
 </div>
 ```
