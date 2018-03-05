@@ -1,12 +1,13 @@
-//import EscaEcomm from '../dist-browser/v1'
-//window.EscaEcomm = EscaEcomm
+import EscaEcomm from '../src'
+window.EscaEcomm = EscaEcomm
 
 setTimeout(() => {
 	console.log('Running')
 	if (window.EscaEcomm) {
 		console.log(window.EscaEcomm)
 		window.escaEcomm = new window.EscaEcomm({
-			siteId: 'goalrilla',
+			siteId: 'vuly',
+			environment: 'testing',
 		})
 
 	}

@@ -50,10 +50,15 @@ export default function (id) {
 		els.price.forEach(el => {
 			// TODO: format number
 			let formatted = pricing
-			if(typeof formatted === 'string'){
-				formatted = Number(formatted)
+			if(formatted){
+				if(typeof formatted === 'string'){
+					formatted = Number(formatted)
+				}
+				formatted = '$' + formatted.toFixed(2)
 			}
-			formatted = '$' + formatted.toFixed(2)
+			else{
+				formatted = ''
+			}
 			el.textContent = formatted
 		})
 		els.addToCart.forEach(el => {
